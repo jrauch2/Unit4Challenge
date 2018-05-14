@@ -1,0 +1,2 @@
+2018-05-09 01:53:12 ERROR FileInput:24 - File Open Error: BestValueParkingGarageData.csv java.io.FileNotFoundException: BestValueParkingGarageData.csv (The system cannot find the file specified)
+2018-05-09 01:53:12 ERROR FileInput:33 - File Read Error: BestValueParkingGarageData.csv java.lang.NullPointerException
