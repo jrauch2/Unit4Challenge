@@ -23,7 +23,7 @@ public abstract class GarageDataOut {
      * returns a variable referencing the <b>Sales</b> enum
      * @return a reference to the <b>Sales</b> enum
      */
-    protected Sales getSALES() {
+    public Sales getSALES() {
         return SALES;
     }
 

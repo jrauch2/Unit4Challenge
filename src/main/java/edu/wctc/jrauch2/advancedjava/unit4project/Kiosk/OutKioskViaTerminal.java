@@ -78,7 +78,7 @@ public class OutKioskViaTerminal extends OutKiosk implements UserInterface, Runn
      * @param ticket The ticket in question
      */
     @Override
-    protected void checkOutNumberedTicket(Ticket ticket) {
+    public void checkOutNumberedTicket(Ticket ticket) {
         closeTicket(ticket);
         System.out.println("\n\n\n\n");
         System.out.println(getHEADER());
@@ -98,7 +98,7 @@ public class OutKioskViaTerminal extends OutKiosk implements UserInterface, Runn
      * Check out a lost ticket
      */
     @Override
-    protected void checkOutLostTicket() {
+    public void checkOutLostTicket() {
         Ticket ticket = getTICKET_FACTORY().getTicket(TicketType.LOST_TICKET);
         getTICKET_TRACKER().addTicket(ticket);
         closeTicket(ticket);

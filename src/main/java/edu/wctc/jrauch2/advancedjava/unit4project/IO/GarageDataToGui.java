@@ -16,7 +16,7 @@ import java.text.NumberFormat;
 public class GarageDataToGui extends GarageDataOut {
     private final String HEADER;
     private final NumberFormat CURRENCY_FORMATTER;
-    protected final TicketTracker TICKET_TRACKER;
+    private final TicketTracker TICKET_TRACKER;
 
     /**
      * The constructor for <b>GarageDataOut</b>

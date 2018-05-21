@@ -20,13 +20,8 @@ public class EventTicket extends NumberedTicket {
     }
 
     @Override
-    public boolean isPaid() {
-        return paid;
-    }
-
-    @Override
     public void close() {
         Sales.INSTANCE.addToTotalSpecialEventRevenue(calculateFee());
-        paid = true;
+        setPaid(true);
     }
 }

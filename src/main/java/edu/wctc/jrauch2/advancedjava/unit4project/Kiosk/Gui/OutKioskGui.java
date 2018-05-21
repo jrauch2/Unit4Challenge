@@ -66,7 +66,7 @@ public class OutKioskGui extends OutKiosk implements UserInterface, Runnable{
      * @param ticket The ticket in question
      */
     @Override
-    protected void checkOutNumberedTicket(Ticket ticket) {
+    public void checkOutNumberedTicket(Ticket ticket) {
         closeTicket(ticket);
         JOptionPane.showMessageDialog(mainPanel, getHEADER() +
                 "Receipt for ticket number: " +
@@ -86,7 +86,7 @@ public class OutKioskGui extends OutKiosk implements UserInterface, Runnable{
      * Check out a lost ticket. generates a lost ticket and displays receipt information
      */
     @Override
-    protected void checkOutLostTicket() {
+    public void checkOutLostTicket() {
         Ticket ticket = getTICKET_FACTORY().getTicket(TicketType.LOST_TICKET);
         getTICKET_TRACKER().addTicket(ticket);
         closeTicket(ticket);

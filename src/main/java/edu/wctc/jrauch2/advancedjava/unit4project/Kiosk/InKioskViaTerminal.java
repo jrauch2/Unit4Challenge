@@ -43,7 +43,7 @@ public class InKioskViaTerminal extends InKiosk implements UserInterface, Runnab
      * @param ticket Accepts a <b>Ticket</b> as a parameter
      */
     @Override
-    protected void printTicket(Ticket ticket) {
+    public void printTicket(Ticket ticket) {
         System.out.println("\n\n\n\n");
         System.out.println("Take your ticket.\nTicket number: " + getTicketNumber((NumberedTicket) ticket));
         keyboard.nextLine();

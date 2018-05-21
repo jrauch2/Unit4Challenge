@@ -27,9 +27,9 @@ public abstract class OutKiosk extends Kiosk {
 
     /**
      * Closes the ticket and marks it as paid
-     * @param ticket
+     * @param ticket The ticket to be closed
      */
-    protected void closeTicket(Ticket ticket) {
+    public void closeTicket(Ticket ticket) {
         ticket.close();
     }
 
@@ -38,7 +38,7 @@ public abstract class OutKiosk extends Kiosk {
      * @param ticket The ticket to be calculated
      * @return A double containing the fee for the ticket
      */
-    protected double calculateFee(Ticket ticket) {
+    public double calculateFee(Ticket ticket) {
         return ticket.calculateFee();
     }
 
@@ -47,7 +47,7 @@ public abstract class OutKiosk extends Kiosk {
      * @param ticket The ticket in question
      * @return if <i>Paid</i> is <i>true</i>
      */
-    protected boolean isPaid(Ticket ticket) {
+    public boolean isPaid(Ticket ticket) {
         return ticket.isPaid();
     }
 
@@ -56,7 +56,7 @@ public abstract class OutKiosk extends Kiosk {
      * @param ticket The ticket in question
      * @return The <b>TicketType</b>
      */
-    protected TicketType getTicketType(Ticket ticket) {
+    public TicketType getTicketType(Ticket ticket) {
         return ticket.getTicketType();
     }
 
@@ -66,7 +66,7 @@ public abstract class OutKiosk extends Kiosk {
      * <i>Out</i> time. The ticket must be closed.
      * @return The <b>Duration</b> between <i>timeIn</i> and <i>timeOut</i>
      */
-    protected Duration getTimeParked(StandardTicket standardTicket) {
+    public Duration getTimeParked(StandardTicket standardTicket) {
         return standardTicket.getTimeParked();
     }
 
@@ -75,7 +75,7 @@ public abstract class OutKiosk extends Kiosk {
      * @param ticket The ticket in question
      * @return The <b>LocalDateTime</b> reflecting when the ticket was issued
      */
-    protected LocalDateTime getTimeIn(StandardTicket ticket) {
+    public LocalDateTime getTimeIn(StandardTicket ticket) {
         return ticket.getTimeIn();
     }
 
@@ -84,7 +84,7 @@ public abstract class OutKiosk extends Kiosk {
      * @param ticket The ticket in question
      * @return The <b>LocalDateTime</b> reflecting when the ticket was checked out
      */
-    protected LocalDateTime getTimeOut(StandardTicket ticket) {
+    public LocalDateTime getTimeOut(StandardTicket ticket) {
         return ticket.getTimeOut();
     }
 
@@ -93,10 +93,10 @@ public abstract class OutKiosk extends Kiosk {
      * extending class
      * @param ticket The ticket in question
      */
-    protected abstract void checkOutNumberedTicket(Ticket ticket);
+    public abstract void checkOutNumberedTicket(Ticket ticket);
 
     /**
      * Check out a lost ticket. <i>checkOutLostTicket</i> is abstract and must be overridden by the extending class
      */
-    protected abstract void checkOutLostTicket();
+    public abstract void checkOutLostTicket();
 }

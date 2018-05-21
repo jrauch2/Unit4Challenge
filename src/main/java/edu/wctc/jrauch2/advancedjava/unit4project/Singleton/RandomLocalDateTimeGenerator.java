@@ -45,7 +45,7 @@ public enum RandomLocalDateTimeGenerator {
      * @return
      */
     private int getRandomNumberInRange(int min, int max) {
-        if (min >= max) {
+        if (min > max) {
             throw new IllegalArgumentException("min must be less than max");
         }
         Random r = new Random();

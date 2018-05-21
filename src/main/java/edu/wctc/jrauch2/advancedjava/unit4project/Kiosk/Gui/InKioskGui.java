@@ -47,7 +47,7 @@ public class InKioskGui extends InKiosk implements UserInterface, Runnable {
      * @param ticket Accepts a <b>Ticket</b> as a parameter
      */
     @Override
-    protected void printTicket(Ticket ticket) {
+    public void printTicket(Ticket ticket) {
         JOptionPane.showMessageDialog(mainPanel, "Take your ticket.\nTicket number: " + getTicketNumber((NumberedTicket) ticket));
     }
 

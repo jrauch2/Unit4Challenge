@@ -60,14 +60,9 @@ public class StandardTicket extends NumberedTicket {
     }
 
     @Override
-    public boolean isPaid() {
-        return paid;
-    }
-
-    @Override
     public void close() {
         timeOut = LocalDateTime.now();
         Sales.INSTANCE.addToTotalCheckInRevenue(calculateFee());
-        paid = true;
+        setPaid(true);
     }
 }

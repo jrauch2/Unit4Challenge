@@ -20,13 +20,8 @@ public class LostTicket extends Ticket {
     }
 
     @Override
-    public boolean isPaid() {
-        return paid;
-    }
-
-    @Override
     public void close() {
         Sales.INSTANCE.addToLostTicketRevenue(calculateFee());
-        paid = true;
+        setPaid(true);
     }
 }

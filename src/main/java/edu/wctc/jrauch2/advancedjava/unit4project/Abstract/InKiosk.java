@@ -26,7 +26,7 @@ public abstract class InKiosk extends Kiosk {
      * Adds a <b>StandardTicket</b> to the <b>TICKET_TRACKER</b>
      * @return The ticket that was created
      */
-    protected final Ticket addStandardTicketToTicketTracker() {
+    public final Ticket addStandardTicketToTicketTracker() {
         Ticket ticket = getTICKET_FACTORY().getTicket(TicketType.STANDARD_TICKET);
         getTICKET_TRACKER().addTicket(ticket);
         return ticket;
@@ -36,7 +36,7 @@ public abstract class InKiosk extends Kiosk {
      * Adds an <b>EventTicket</b> to the <b>TICKET_TRACKER</b>
      * @return The ticket that was created
      */
-    protected final Ticket addEventTicketToTicketTracker() {
+    public final Ticket addEventTicketToTicketTracker() {
         Ticket ticket = getTICKET_FACTORY().getTicket(TicketType.EVENT_TICKET);
         getTICKET_TRACKER().addTicket(ticket);
         return ticket;
@@ -45,7 +45,7 @@ public abstract class InKiosk extends Kiosk {
     /**
      * Closes the garage
      */
-    protected final void closeGarage() {
+    public final void closeGarage() {
         BestValueParkingGarage.INSTANCE.closeGarage();
     }
 
@@ -53,5 +53,5 @@ public abstract class InKiosk extends Kiosk {
      * Abstract method <i>printTicket</i> to be overridden by child classes
      * @param ticket Accepts a <b>Ticket</b> as a parameter
      */
-    protected abstract void printTicket(Ticket ticket);
+    public abstract void printTicket(Ticket ticket);
 }

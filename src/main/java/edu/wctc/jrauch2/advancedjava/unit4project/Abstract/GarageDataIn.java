@@ -31,7 +31,7 @@ public abstract class GarageDataIn {
      * returns a variable referencing the <b>Sales</b> enum
      * @return a reference to the <b>Sales</b> enum
      */
-    protected Sales getSALES() {
+    public Sales getSALES() {
         return SALES;
     }
 
@@ -39,7 +39,7 @@ public abstract class GarageDataIn {
      * returns a variable referencing the <b>TicketFactory</b> enum
      * @return a reference to the <b>TicketFactory</b> enum
      */
-    protected TicketFactory getTICKET_FACTORY() {
+    public TicketFactory getTICKET_FACTORY() {
         return TICKET_FACTORY;
     }
 
@@ -47,7 +47,7 @@ public abstract class GarageDataIn {
      * returns a variable reference the <b>TicketTracker</b> enum
      * @return a reference to the <b>TicketTracker</b> enum
      */
-    protected TicketTracker getTICKET_TRACKER() {
+    public TicketTracker getTICKET_TRACKER() {
         return TICKET_TRACKER;
     }
 }

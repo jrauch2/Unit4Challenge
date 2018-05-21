@@ -37,10 +37,6 @@ public enum BestValueParkingGarage implements Garage {
     private final Sales SALES;
     private final CSVInput CSV_INPUT;
     private final String GARAGE_DATA_FILE_NAME;
-    private Runnable inKioskViaTerminal;
-    private Runnable outKioskViaTerminal;
-    private Runnable inKioskGuiForm;
-    private Runnable outKioskGuiForm;
     private boolean garageOpen;
 
     /**
@@ -91,25 +87,15 @@ public enum BestValueParkingGarage implements Garage {
         setGarageOpen(true);
         loadGarageData();
 
-        inKioskViaTerminal = new InKioskViaTerminal(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME, garageOpen);
-        Thread thread0 = new Thread(inKioskViaTerminal);
+        Thread thread0 = new Thread(new InKioskViaTerminal(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME, garageOpen));
         thread0.start();
-//
-//        outKioskViaTerminal = new OutKioskViaTerminal(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME);
-//        Thread thread1 = new Thread(outKioskViaTerminal);
+
+//        Thread thread1 = new Thread(new OutKioskViaTerminal(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME));
 //        thread1.start();
 
-        inKioskGuiForm = new InKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME);
-        SwingUtilities.invokeLater(inKioskGuiForm);
+        SwingUtilities.invokeLater(new InKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME));
 
-        outKioskGuiForm = new OutKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME);
-        SwingUtilities.invokeLater(outKioskGuiForm);
-
-        inKioskGuiForm = new InKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME);
-        SwingUtilities.invokeLater(inKioskGuiForm);
-
-        outKioskGuiForm = new OutKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME);
-        SwingUtilities.invokeLater(outKioskGuiForm);
+        SwingUtilities.invokeLater(new OutKioskGui(TICKET_TRACKER, TICKET_FACTORY, GARAGE_NAME));
     }
 
     /**

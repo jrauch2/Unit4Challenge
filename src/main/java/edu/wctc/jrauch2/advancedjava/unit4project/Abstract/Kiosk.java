@@ -41,7 +41,7 @@ public abstract class Kiosk {
      * @param numberedTicket A numbered ticket
      * @return The ticket number of the <b>NumberedTicket</b>
      */
-    protected int getTicketNumber(NumberedTicket numberedTicket) {
+    public int getTicketNumber(NumberedTicket numberedTicket) {
         return numberedTicket.getTicketNumber();
     }
 
@@ -49,7 +49,7 @@ public abstract class Kiosk {
      * Get the ticket tracker
      * @return The <b>TicketTracker</b> instance
      */
-    protected TicketTracker getTICKET_TRACKER() {
+    public TicketTracker getTICKET_TRACKER() {
         return TICKET_TRACKER;
     }
 
@@ -57,7 +57,7 @@ public abstract class Kiosk {
      * Get the ticket factory
      * @return The <b>TicketFactory</b> instance
      */
-    protected TicketFactory getTICKET_FACTORY() {
+    public TicketFactory getTICKET_FACTORY() {
         return TICKET_FACTORY;
     }
 
@@ -65,7 +65,7 @@ public abstract class Kiosk {
      * Get the header
      * @return The header String
      */
-    protected String getHEADER() {
+    public String getHEADER() {
         return HEADER;
     }
 
@@ -73,7 +73,7 @@ public abstract class Kiosk {
      * Get the invalid ticket error message
      * @return The invalid ticket error message String
      */
-    protected String getINVALID_TICKET_ERROR_MESSAGE() {
+    public String getINVALID_TICKET_ERROR_MESSAGE() {
         return INVALID_TICKET_ERROR_MESSAGE;
     }
 
@@ -81,7 +81,7 @@ public abstract class Kiosk {
      * Get the hour minute formatter
      * @return The <b>DateTimeFormatter</b> that formats hours and minutes
      */
-    protected DateTimeFormatter getHOUR_MINUTE_FORMATTER() {
+    public DateTimeFormatter getHOUR_MINUTE_FORMATTER() {
         return HOUR_MINUTE_FORMATTER;
     }
 
@@ -89,7 +89,7 @@ public abstract class Kiosk {
      * Get the currency formatter
      * @return The <b>NumberFormat</b> currency formatter
      */
-    protected NumberFormat getCURRENCY_FORMATTER() {
+    public NumberFormat getCURRENCY_FORMATTER() {
         return CURRENCY_FORMATTER;
     }
 
@@ -97,7 +97,7 @@ public abstract class Kiosk {
      * Get the name of the garage
      * @return The garage name as a String
      */
-    protected String getGARAGE_NAME() {
+    public String getGARAGE_NAME() {
         return GARAGE_NAME;
     }
 }

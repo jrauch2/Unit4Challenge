@@ -13,7 +13,7 @@ import edu.wctc.jrauch2.advancedjava.unit4project.Interface.Feeable;
  */
 public abstract class Ticket implements Feeable, Closeable {
     private final TicketType ticketType;
-    protected boolean paid;
+    private boolean paid;
 
     /**
      * The constructor for <b>Ticket</b>
@@ -30,5 +30,13 @@ public abstract class Ticket implements Feeable, Closeable {
      */
     public TicketType getTicketType() {
         return ticketType;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 }
